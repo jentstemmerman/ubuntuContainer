@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  canonical:
+    container_name: canonical
+    image: canonical
+    restart: unless-stopped
+    ports:
+      - "5007:22"
+
+#    user: "1000:1000"
+
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+
+    volumes:
+      - /home/jents/dockerCanonical/home/jents:/home/jents
